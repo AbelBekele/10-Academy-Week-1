@@ -1,5 +1,6 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
+import pandas as pd
 
 def set_seaborn_style():
     """
@@ -62,7 +63,7 @@ def plot_boxplot(data, title, x_label, color='lightcoral'):
     plt.grid(axis='y', linestyle='--', alpha=0.7)
     plt.show()
 
-def plot_time_series(data, time_column, title, x_label, y_label):
+def plot_time_series(data, time_column, title, x_label, y_label, color='skyblue'):
     """
     Plot a time series using Matplotlib.
 
@@ -77,19 +78,23 @@ def plot_time_series(data, time_column, title, x_label, y_label):
         Label for the x-axis.
     - y_label: str
         Label for the y-axis.
+    - color: str, optional
+        Color for the plot.
 
     Returns:
     - None
     """
-    data[time_column] = pd.to_datetime(data[time_column])
-    df_time_series = data.set_index(time_column)
-    df_time_series.resample('D').size().plot()
-    plt.title(title)
-    plt.xlabel(x_label)
-    plt.ylabel(y_label)
+    plt.figure(figsize=(12, 6))
+    sns.lineplot(data=data.resample('D').size(), color=color, marker='o')
+    plt.title(title, fontsize=16)
+    plt.xlabel(x_label, fontsize=14)
+    plt.ylabel(y_label, fontsize=14)
+    plt.xticks(fontsize=12)
+    plt.yticks(fontsize=12)
+    plt.grid(axis='y', linestyle='--', alpha=0.7)
     plt.show()
 
-def plot_countplot(data, x_column, title, x_label, rotation=45):
+def plot_countplot(data, x_column, title, x_label, rotation=45, color='skyblue'):
     """
     Plot a countplot using Seaborn.
 
@@ -104,13 +109,17 @@ def plot_countplot(data, x_column, title, x_label, rotation=45):
         Label for the x-axis.
     - rotation: int, optional
         Rotation angle for x-axis labels.
+    - color: str, optional
+        Color for the plot.
 
     Returns:
     - None
     """
     plt.figure(figsize=(10, 6))
-    sns.countplot(x=data[x_column])
-    plt.title(title)
-    plt.xlabel(x_label)
-    plt.xticks(rotation=rotation)
+    sns.countplot(x=data[x_column], color=color)
+    plt.title(title, fontsize=16)
+    plt.xlabel(x_label, fontsize=14)
+    plt.xticks(rotation=rotation, fontsize=12)
+    plt.yticks(fontsize=12)
+    plt.grid(axis='y', linestyle='--', alpha=0.7)
     plt.show()
