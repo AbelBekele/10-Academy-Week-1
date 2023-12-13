@@ -123,3 +123,29 @@ def plot_countplot(data, x_column, title, x_label, rotation=45, color='skyblue')
     plt.yticks(fontsize=12)
     plt.grid(axis='y', linestyle='--', alpha=0.7)
     plt.show()
+
+def create_table(table_data):
+    """
+    Create a table using Plotly.
+
+    Parameters:
+    - table_data: DataFrame
+        Data for the table.
+
+    Returns:
+    - None
+    """
+    table = go.Figure(data=[go.Table(
+        header=dict(values=list(table_data.columns),
+                    fill_color='lightblue',
+                    align='center',
+                    font=dict(color='black', size=14)),
+        cells=dict(values=[table_data['Handset Manufacturer'], table_data['Handset Type'], table_data['count']],
+                   fill=dict(color=['white', 'lightcyan', 'lightcyan']),
+                   align='center',
+                   font=dict(color='black', size=12)))
+    ])
+
+    table.update_layout(width=800, height=400, margin=dict(l=0, r=0, t=0, b=0))
+
+    table.show()
