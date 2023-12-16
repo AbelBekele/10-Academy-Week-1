@@ -37,6 +37,13 @@ class DatabaseConnection:
             return df
         except Exception as e:
             print(f"Error executing query: {str(e)}")
+            
+    def execute_update_query(self, query):
+        try:
+            self.connection.execute(query)
+            print("Query executed successfully.")
+        except Exception as e:
+            print(f"Error executing query: {str(e)}")
 
     def close_connection(self):
         try:
