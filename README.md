@@ -1,12 +1,12 @@
 
-# Exploratory Data Analysis (EDA) for 10-Academy-week1-challenge
+# Smart Traffic Data Warehouse
 
 ## Overview
 
 This repository contains code and documentation for performing exploratory data analysis (EDA) on a provded telecom data.
 
 ## Table of Contents
-- [Project Title](#exploratory-data-analysis-eda-for-10-academy-week1-challenge)
+- [Project Title](#Smart-Traffic-Data-Warehouse)
   - [Overview](#overview)
   - [What is EDA?](#what-is-eda)
   - [What this repository includes](#what-this-repository-includes)
