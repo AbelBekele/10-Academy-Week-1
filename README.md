@@ -1,12 +1,12 @@
 
-# Smart Traffic Data Warehouse
+# Telecom User Behavior Analytics
 
 ## Overview
 
 This repository contains code and documentation for performing exploratory data analysis (EDA) on a provded telecom data.
 
 ## Table of Contents
-- [Project Title](#Smart-Traffic-Data-Warehouse)
+- [Project Title](#Telecom-User-Behavior-Analytics)
   - [Overview](#overview)
   - [What is EDA?](#what-is-eda)
   - [What this repository includes](#what-this-repository-includes)
